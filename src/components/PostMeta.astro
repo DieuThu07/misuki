@@ -6,7 +6,7 @@ import { i18n } from "../i18n/translation";
 import { formatDateToYYYYMMDD } from "../utils/date-utils";
 import { getCategoryUrl, getTagUrl } from "../utils/url-utils";
 
-// 解析 umami
+// Phân tích dữ liệu Umami
 const umamiEnabled = umamiConfig.enabled || false;
 const umamiWebsiteId =
 	umamiConfig.scripts.match(/data-website-id="([^"]+)"/)?.[1] || "";
@@ -23,10 +23,10 @@ export interface Props {
 	isHome?: boolean;
 	className?: string;
 	id?: string;
-	showOnlyBasicMeta?: boolean; // 新增属性，控制是否只显示基本元数据
-	words?: number; // 字数统计
-	minutes?: number; // 阅读时间（分钟）
-	showWordCount?: boolean; // 是否显示字数统计
+	showOnlyBasicMeta?: boolean; // Thêm thuộc tính: chỉ hiển thị metadata cơ bản
+	words?: number; // Đếm ký tự
+	minutes?: number; // Thời gian đọc ước tính (phút)
+	showWordCount?: boolean; // Hiển thị thống kê số chữ
 }
 
 const {
@@ -39,10 +39,10 @@ const {
 	isHome,
 	className = "",
 	id,
-	showOnlyBasicMeta = false, // 默认为false，保持原有行为
+	showOnlyBasicMeta = false, // Mặc định là false, giữ nguyên hành vi hiện tại
 	words,
 	// minutes,
-	showWordCount = false, // 默认不显示字数统计
+	showWordCount = false, // Mặc định không hiển thị thống kê số chữ.
 } = Astro.props;
 ---
 
@@ -91,7 +91,7 @@ const {
         </div>
     )}
 
-    <!-- tags (只有在不显示基本元数据时才显示) -->
+    <!-- Tags: chỉ hiển thị khi không bật hiển thị metadata cơ bản -->
     {!showOnlyBasicMeta && (
         <div class:list={["items-center", {"flex": !hideTagsForMobile, "hidden md:flex": hideTagsForMobile}]}>
             <div class="meta-icon">
@@ -113,38 +113,38 @@ const {
         </div>
     )}
     
-    <!-- 访问量（首页不显示，且umami.enabled为true时显示） -->
+    <!-- Lượt truy cập (ẩn ở trang chủ, chỉ hiển thị khi bật Umami) -->
     {!isHome && umamiEnabled && id && (
         <div class="flex items-center">
             <div class="meta-icon">
                 <Icon name="material-symbols:visibility-outline-rounded" class="text-xl"></Icon>
             </div>
-            <span class="text-50 text-sm font-medium" id="page-views-display">统计加载中...</span>
+            <span class="text-50 text-sm font-medium" id="page-views-display">Đang tải thống kê...</span>
         </div>
     )}
 </div>
 
-<!-- 只有在非首页且启用umami且有slug时才加载脚本 -->
+<!-- Chỉ tải script khi không phải trang chủ, Umami được bật và có slug -->
 {!isHome && umamiEnabled && id && (
     <script is:inline define:vars={{ id, umamiBaseUrl, umamiApiKey, umamiWebsiteId, umamiConfig }}>
-        // 客户端统计文案生成函数
+        // Hàm tạo nội dung thống kê phía client
         function generateStatsText(pageViews, visitors) {
-            return `浏览量 ${pageViews} · 访客 ${visitors}`;
+            return `Lượt xem ${pageViews} · Khách truy cập ${visitors}`;
         }
         
-        // 获取访问量统计
+        // Lấy thống kê lượt truy cập
         async function fetchPageViews(isRetry = false) {
             // @ts-ignore
             if (!umamiConfig.enabled || !umamiWebsiteId || !id || !isRetry) return;
             
             try {
-                // 构造文章页面的URL路径
+                // Xây dựng đường dẫn URL của trang bài viết
                 const pageUrl = `/posts/${id}/`;
                 
-                // 调用全局工具获取特定页面的 Umami 统计数据
+                // Gọi công cụ toàn cục để lấy dữ liệu thống kê Umami của trang cụ thể.
                 const stats = await getUmamiPageStats(umamiBaseUrl, umamiApiKey, umamiWebsiteId, pageUrl);
                 
-                // 从返回的数据中提取页面浏览量和访客数
+                // Trích xuất lượt xem trang và số khách truy cập từ dữ liệu trả về.
                 const pageViews = stats.pageviews || 0;
                 const visitors = stats.visitors || 0;
                 
@@ -156,12 +156,12 @@ const {
                 console.error('Error fetching page views:', error);
                 const displayElement = document.getElementById('page-views-display');
                 if (displayElement) {
-                    displayElement.textContent = '统计不可用';
+                    displayElement.textContent = 'Thống kê không khả dụng';
                 }
             }
         }
 
-        // 页面加载完成后获取统计数据
+        // Lấy dữ liệu thống kê sau khi trang tải xong
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', fetchPageViews);
         } else {
