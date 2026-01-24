@@ -289,12 +289,12 @@ export const en: Translation = {
 	// Last Modified Time Card
 	[Key.lastModifiedPrefix]: "Thời gian kể từ lần chỉnh sửa: ",
 	[Key.lastModifiedOutdated]: "Một số thông tin có thể đã lỗi thời",
-	[Key.year]: "n",
-	[Key.month]: "th",
-	[Key.day]: "ng",
-	[Key.hour]: "h",
-	[Key.minute]: "p",
-	[Key.second]: "g",
+	[Key.year]: "năm",
+	[Key.month]: "tháng",
+	[Key.day]: "ngày",
+	[Key.hour]: "giờ",
+	[Key.minute]: "phút",
+	[Key.second]: "giây",
 
 	// Site Stats
 	[Key.siteStats]: "Thống kê website",
