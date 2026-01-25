@@ -16,16 +16,16 @@ import type {
 } from "./types/config";
 import { LinkPreset } from "./types/config";
 
-// 移除i18n导入以避免循环依赖
+// Loại bỏ các lệnh import i18n để tránh phụ thuộc vòng tròn.
 
-// 定义站点语言
-const SITE_LANG = "en"; // 语言代码，例如：'en', 'zh_CN', 'ja' 等。
-const SITE_TIMEZONE = 7; //设置你的网站时区 from -12 to 12 default in UTC+8
+// Xác định ngôn ngữ trang web
+const SITE_LANG = "en"; // Mã ngôn ngữ, chẳng hạn như 'en', 'zh_CN', 'ja', v.v.
+const SITE_TIMEZONE = 7; // Hãy đặt múi giờ của trang web của bạn từ -12 đến 12 (mặc định là UTC+7).
 export const siteConfig: SiteConfig = {
 	title: "Mizuki",
 	subtitle: "One demo website",
-	siteURL: "https://mizuki.mysqil.com/", // 请替换为你的站点URL，以斜杠结尾
-	siteStartDate: "2025-01-01", // 站点开始运行日期，用于站点统计组件计算运行天数
+	siteURL: "https://mizuki.mysqil.com/", // Vui lòng thay thế bằng URL trang web của bạn, kết thúc bằng dấu gạch chéo.
+	siteStartDate: "2025-01-01", // Ngày bắt đầu hoạt động của trang web được thành phần thống kê trang web sử dụng để tính toán số ngày trang web đã hoạt động.
 
 	timeZone: SITE_TIMEZONE,
 
@@ -131,9 +131,9 @@ export const siteConfig: SiteConfig = {
 		},
 
 		waves: {
-			enable: true, // 是否启用水波纹效果（注意：此功能性能开销较大）
-			performanceMode: false, // 性能模式：减少动画复杂度(性能提升40%)
-			mobileDisable: false, // 移动端禁用
+			enable: false, // Bật hiệu ứng gợn sóng nước (Lưu ý: Chức năng này tiêu tốn đáng kể tài nguyên hệ thống).
+			performanceMode: false, // Chế độ hiệu năng: Giảm độ phức tạp của hoạt ảnh (cải thiện hiệu năng 40%)
+			mobileDisable: false, // Thiết bị di động bị vô hiệu hóa
 		},
 
 		// PicFlow API支持(智能图片API)
@@ -206,10 +206,10 @@ export const siteConfig: SiteConfig = {
 			enableCompress: true, // 启用字体子集优化，减少字体文件大小
 		},
 		cjkFont: {
-			// 中日韩字体 - 作为回退字体
-			fontFamily: "JosefinSans-Medium",
+			// Phông chữ tiếng Trung, tiếng Nhật và tiếng Hàn - dùng làm phông chữ dự phòng.
+			fontFamily: "JosefinSans-MediumItalic",
 			fontWeight: "500",
-			localFonts: ["JosefinSans-Medium.ttf"],
+			localFonts: ["JosefinSans-MediumItalic.ttf"],
 			enableCompress: true, // 启用字体子集优化，减少字体文件大小
 		},
 	},
