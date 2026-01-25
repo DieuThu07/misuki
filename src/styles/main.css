@@ -11,16 +11,16 @@
 
 /* 导入 ZenMaruGothic-Medium 字体 */
 @font-face {
-  font-family: "Unbounded-VariableFont_wght";
-  src: url("/assets/font/Unbounded-VariableFont_wght.ttf") format("truetype");
+  font-family: "JosefinSans-Medium";
+  src: url("/assets/font/JosefinSans-Medium.ttf") format("truetype");
   font-weight: 500;
   font-display: swap;
 }
 
 /* 导入 萝莉体 第二版 字体 */
 @font-face {
-  font-family: "Unbounded-VariableFont_wght";
-  src: url("/assets/font/Unbounded-VariableFont_wght.ttf") format("truetype");
+  font-family: "JosefinSans-MediumItalic";
+  src: url("/assets/font/JosefinSans-MediumItalic.ttf") format("truetype");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
