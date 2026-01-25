@@ -20,6 +20,13 @@ const diaryData: DiaryItem[] = [
 		date: "2025-01-15T10:30:00Z",
 		images: ["/images/diary/sakura.jpg", "/images/diary/1.jpg"],
 	},
+	{
+		id: 2,
+		content:
+			"Diệu Thư test nhật ký !",
+		date: "2026-01-25T17:30:00+07:00",
+		images: ["https://img.freepik.com/free-photo/lifestyle-scene-with-people-doing-regular-tasks-anime-style_23-2151002523.jpg?t=st=1769337911~exp=1769341511~hmac=0e7c6398bc72576817411cc20ea717759cfb9e724548809a81860ce262759a43", "/images/diary/1.jpg", "/images/diary/sakura.jpg"],
+	},
 ];
 
 // 获取日记统计数据
