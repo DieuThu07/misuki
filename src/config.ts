@@ -200,16 +200,16 @@ export const siteConfig: SiteConfig = {
 		asciiFont: {
 			// 英文字体 - 优先级最高
 			// 指定为英文字体则无论字体包含多大范围，都只会保留 ASCII 字符子集
-			fontFamily: "Unbounded-VariableFont_wght",
+			fontFamily: "JosefinSans-Medium",
 			fontWeight: "400",
-			localFonts: ["Unbounded-VariableFont_wght.ttf"],
+			localFonts: ["JosefinSans-Medium.ttf"],
 			enableCompress: true, // 启用字体子集优化，减少字体文件大小
 		},
 		cjkFont: {
 			// 中日韩字体 - 作为回退字体
-			fontFamily: "Unbounded-VariableFont_wght",
+			fontFamily: "JosefinSans-Medium",
 			fontWeight: "500",
-			localFonts: ["Unbounded-VariableFont_wght.ttf"],
+			localFonts: ["JosefinSans-Medium.ttf"],
 			enableCompress: true, // 启用字体子集优化，减少字体文件大小
 		},
 	},
