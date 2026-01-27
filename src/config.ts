@@ -22,9 +22,9 @@ import { LinkPreset } from "./types/config";
 const SITE_LANG = "en"; // Mã ngôn ngữ, chẳng hạn như 'en', 'zh_CN', 'ja', v.v.
 const SITE_TIMEZONE = 7; // Hãy đặt múi giờ của trang web của bạn từ -12 đến 12 (mặc định là UTC+7).
 export const siteConfig: SiteConfig = {
-	title: "Mizuki",
-	subtitle: "One demo website",
-	siteURL: "https://mizuki.mysqil.com/", // Vui lòng thay thế bằng URL trang web của bạn, kết thúc bằng dấu gạch chéo.
+	title: "FXYZTeam",
+	subtitle: "Công chúa Phước Quang",
+	siteURL: "https://dieuthuw.sbs/", // Vui lòng thay thế bằng URL trang web của bạn, kết thúc bằng dấu gạch chéo.
 	siteStartDate: "2025-01-01", // Ngày bắt đầu hoạt động của trang web được thành phần thống kê trang web sử dụng để tính toán số ngày trang web đã hoạt động.
 
 	timeZone: SITE_TIMEZONE,
@@ -53,7 +53,7 @@ export const siteConfig: SiteConfig = {
 		// 显示模式："text-icon" 显示图标+文本，"logo" 仅显示Logo
 		mode: "logo",
 		// 顶栏标题文本
-		text: "MizukiUI",
+		text: "FXYZTeam",
 		// 顶栏标题图标路径，默认使用 public/assets/home/home.png
 		icon: "assets/home/home.png",
 		// 网站Logo图片路径
@@ -93,13 +93,13 @@ export const siteConfig: SiteConfig = {
 	// 壁纸模式配置
 	wallpaperMode: {
 		// 默认壁纸模式：banner=顶部横幅，fullscreen=全屏壁纸，none=无壁纸
-		defaultMode: "none",
+		defaultMode: "banner",
 		// 整体布局方案切换按钮显示设置（默认："desktop"）
 		// "off" = 不显示
 		// "mobile" = 仅在移动端显示
 		// "desktop" = 仅在桌面端显示
 		// "both" = 在所有设备上显示
-		showModeSwitchOnMobile: "off",
+		showModeSwitchOnMobile: "both",
 	},
 
 	banner: {
@@ -127,7 +127,7 @@ export const siteConfig: SiteConfig = {
 
 		carousel: {
 			enable: true, // 为 true 时：为多张图片启用轮播。为 false 时：从数组中随机显示一张图片
-			interval: 1.5, // 轮播间隔时间（秒）
+			interval: 3.5, // 轮播间隔时间（秒）
 		},
 
 		waves: {
@@ -146,18 +146,16 @@ export const siteConfig: SiteConfig = {
 		// 请自行搭建API
 
 		homeText: {
-			enable: false, // 在主页显示自定义文本
-			title: "わたしの部屋", // 主页横幅主标题
+			enable: true, // 在主页显示自定义文本
+			title: "Vua An Nhơn", // 主页横幅主标题
 
 			subtitle: [
-				"特別なことはないけど、君がいると十分です",
-				"今でもあなたは私の光",
-				"君ってさ、知らないうちに私の毎日になってたよ",
-				"君と話すと、なんか毎日がちょっと楽しくなるんだ",
-				"今日はなんでもない日。でも、ちょっとだけいい日",
+				"Máy chém Tuy Phước",
+				"Công chúa Phước Quang",
+				"Thích chém nhau",
 			],
 			typewriter: {
-				enable: false, // 启用副标题打字机效果
+				enable: true, // 启用副标题打字机效果
 
 				speed: 100, // 打字速度（毫秒）
 				deleteSpeed: 50, // 删除速度（毫秒）
@@ -166,10 +164,10 @@ export const siteConfig: SiteConfig = {
 		},
 
 		credit: {
-			enable: false, // 显示横幅图片来源文本
+			enable: true, // 显示横幅图片来源文本
 
-			text: "Describe", // 要显示的来源文本
-			url: "", // （可选）原始艺术品或艺术家页面的 URL 链接
+			text: "Alo", // 要显示的来源文本
+			url: "/", // （可选）原始艺术品或艺术家页面的 URL 链接
 		},
 
 		navbar: {
@@ -434,14 +432,14 @@ export const shareConfig: ShareConfig = {
 };
 
 export const announcementConfig: AnnouncementConfig = {
-	title: "", // 公告标题，填空使用i18n字符串Key.announcement
-	content: "ブログへようこそ！これはサンプルの告知です", // 公告内容
+	title: "Key.announcement", // 公告标题，填空使用i18n字符串Key.announcement
+	content: "Công chúa Phước Quang", // 公告内容
 	closable: true, // 允许用户关闭公告
 	link: {
 		enable: true, // 启用链接
 		text: "Learn More", // 链接文本
 		url: "/about/", // 链接 URL
-		external: false, // 内部链接
+		external: true, // 内部链接
 	},
 };
 
@@ -654,8 +652,8 @@ export const pioConfig: import("./types/config").PioConfig = {
 	mode: "draggable", // 默认为可拖拽模式
 	hiddenOnMobile: true, // 默认在移动设备上隐藏
 	dialog: {
-		welcome: "Welcome to Mizuki Website!", // 欢迎词
-		touch: [
+		welcome: "Welcome to DieuThuLoli Website!", // 欢迎词
+      	touch: [
 			"What are you doing?",
 			"Stop touching me!",
 			"HENTAI!",
@@ -664,7 +662,7 @@ export const pioConfig: import("./types/config").PioConfig = {
 		home: "Click here to go back to homepage!", // 首页提示
 		skin: ["Want to see my new outfit?", "The new outfit looks great~"], // 换装提示
 		close: "QWQ See you next time~", // 关闭提示
-		link: "https://github.com/matsuzaka-yuki/Mizuki", // 关于链接
+		link: "/", // 关于链接
 	},
 };
 
